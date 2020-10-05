@@ -18,8 +18,10 @@
                     @foreach ($emp -> tasks as $tas)
                       <p><a href="{{route('show_tas', $tas -> id)}}">{{$tas -> name}}</a> : {{$tas -> start_date}} - {{$tas -> end_date}}</p>
                     @endforeach
-                  <a class="btn btn-outline-danger" href="{{route('delete', $emp -> id)}}">Delete</a>
-                  <a class="btn btn-outline-primary" href="{{route('edit', $emp -> id)}}">Edit</a>
+                    @auth 
+                      <a class="btn btn-outline-danger" href="{{route('delete', $emp -> id)}}">Delete</a>
+                      <a class="btn btn-outline-primary" href="{{route('edit', $emp -> id)}}">Edit</a>
+                    @endauth
                 </div>
             </div>
         </div>

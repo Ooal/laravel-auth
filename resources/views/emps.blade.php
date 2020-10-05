@@ -15,7 +15,10 @@
                     </li>
                     @endforeach
                     </ul>
-                    <h2><a class="btn btn-outline-primary" href="{{route('create')}}">NEW EMPLOYEE</a></h2>
+                    @auth 
+                      <h2><a class="btn btn-outline-primary" href="{{route('create')}}">NEW EMPLOYEE</a></h2>
+                    @endauth
+
                 </div>
             </div>
         </div>
