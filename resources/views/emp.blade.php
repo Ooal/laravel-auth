@@ -13,12 +13,12 @@
                   <p>Date of birth : {{$emp -> date_of_birth}}</p>
                   <p>Private code : {{$emp -> private_code}}</p>
                   <h3>Location :</h3>
-                  <p>{{$emp -> location -> name}} ({{$emp -> location -> city}} - {{$emp -> location -> state}})</p>
+                  <p><a href="{{route('show_loc', $emp -> location -> id)}}">{{$emp -> location -> name}}</a> : ({{$emp -> location -> city}} - {{$emp -> location -> state}})</p>
                   <h3>Tasks :</h3>
                     @foreach ($emp -> tasks as $tas)
                       <p><a href="{{route('show_tas', $tas -> id)}}">{{$tas -> name}}</a> : {{$tas -> start_date}} - {{$tas -> end_date}}</p>
                     @endforeach
-                    @auth 
+                    @auth
                       <a class="btn btn-outline-danger" href="{{route('delete', $emp -> id)}}">Delete</a>
                       <a class="btn btn-outline-primary" href="{{route('edit', $emp -> id)}}">Edit</a>
                     @endauth

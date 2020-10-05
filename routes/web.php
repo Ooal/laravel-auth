@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'GuestController@index') -> name('index');
 Route::get('/employee/{id}', 'GuestController@show') -> name('show_epm');
 Route::get('/task/{id}', 'TaskController@show') -> name('show_tas');
+Route::get('/loc/{id}', 'LocationController@show') -> name('show_loc');
 Route::get('/delete/{id}', 'LoggedController@destroy') -> name('delete');
 Route::get('/edit/{id}', 'LoggedController@edit') -> name('edit');
 Route::post('/update/{id}', 'LoggedController@update') -> name('update');
